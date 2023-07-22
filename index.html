@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhallagena</title>
+    <script src="tailwind.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7ceb067bec.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      #audio-image {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+
+  <body class="">
+    <div id="all-audio">
+      <div class="w-full sticky top-0 bg-black">
+        <div
+          class="flex justify-between items-center shadow-lg py-1 px-1 md:px-5 border-black flex-col md:flex-row gap-4 md:gap-0"
+        >
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <div class="text-xs justify-self-start">
+              <h2 class="text-xl text-gray-500 font-bold">
+                bhallagena<span class="text-xs text-gray-800 block"
+                  >isn't it normal?</span
+                >
+              </h2>
+            </div>
+            <div class="audio-controlls w-auto w-40">
+              <div class="flex justify-center">
+                <div
+                  id="previous-btn"
+                  class="cursor-pointer w-8 h-8 text-xl text-center rounded-full flex items-center justify-center hover:bg-gray-900 hover:text-white text-gray-900"
+                >
+                  <i class="fa fa-solid fa-caret-left"></i>
+                </div>
+                <div
+                  id="play-btn"
+                  class="mx-3 cursor-pointer w-8 h-8 bg-gray-900 text-gray-100 text-xl text-center rounded-full flex items-center justify-center hover:bg-gray-800"
+                >
+                  <i class="fa fa-solid fa-play"></i>
+                </div>
+                <div
+                  id="next-btn"
+                  class="cursor-pointer w-8 h-8 text-xl text-center rounded-full flex items-center justify-center hover:bg-gray-900 hover:text-white text-gray-900"
+                >
+                  <i class="fa fa-solid fa-caret-right"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center max-w-xs w-auto lg:w-80 md:w-64 justify-center"
+            >
+              <img
+                class="rounded-full hidden md:block"
+                src="https://d-great.org/wp-content/themes/apparatus/images/newsletter_loader.gif"
+                id="audio-image"
+                alt=""
+              />
+              <div class="ml-2">
+                <h2 id="audio-name" class="truncate text-sm text-gray-400">
+                  Loading.
+                </h2>
+                <div class="text-xs class text-gray-600">
+                  <span id="audio-currenttime">00:00</span>
+                  /
+                  <span id="audio-timing">00:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="h-3 flex items-center flex-1 md:max-w-xs justify-between gap-2 ml-2 w-full md:w-auto px-1 md:px-0"
+          >
+            <div class="flex items-center">
+              <div
+                id="audio-loop"
+                class="text-xl text-center rounded-full flex items-center justify-center cursor-pointer text-gray-500 relative hover:text-gray-300"
+              >
+                <i class="fas fa-circle-notch"></i>
+                <span class="text-xs absolute top-0" id="audio-loop-span"
+                  >x</span
+                >
+              </div>
+              <span
+                id="audio-muter"
+                class="ml-3 mr-1 w-8 h-8 text-xl text-center rounded-full flex items-center justify-center cursor-pointer text-gray-500 hover:text-gray-400"
+                ><i class="fas fa-volume-down text-xl"></i
+              ></span>
+              <div
+                id="audio-volume"
+                onclick="changeVolume(event)"
+                class="bg-black h-1 w-20 cursor-pointer bg-gray-900"
+              >
+                <div class="bg-gray-300 h-1" style="width: 10%"></div>
+              </div>
+            </div>
+            <a
+              href="#"
+              id="download-link"
+              class="w-8 h-8 text-white bg-gray-800 text-xl text-center rounded-sm flex items-center justify-center hover:bg-gray-700"
+              target="__blank"
+            >
+              <i class="fas fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full h-1 cursor-pointer bg-black bg-gray-800">
+          <div class="bg-gray-900 h-full" id="audio-progress"></div>
+        </div>
+      </div>
+      <div id="audio-lists" class="border-t-8 border-black"></div>
+    </div>
+    <audio src="" id="audio" class="hidden"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
